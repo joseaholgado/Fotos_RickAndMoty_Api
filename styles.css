@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+h2 {
+    margin: 0;
+    color: #000; 
+    transition: color 0.8s ease; 
+    background-image: linear-gradient(to right, #ff8a00, #e52e71); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+h2:hover {
+    color: transparent; 
+}
+
+h2:not(:hover) {
+    color: #000; 
+    transition: color 0.8s ease; 
+}
+
+.text{
+    margin-top:10px;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+    
+}
+
+nav ul li h3 {
+    margin: 0;
+   
+}
+
+nav ul li:hover h3 {
+    transform: rotate(-15deg);  
+    transition: transform 0.3s ease;
+    
+}
+
+
+/*-----------------------MODAL DEL JS---------------------------------*/
+.containerModal{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.containerModal__modal{
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+.containerModal__modal img{
+    width: 520px;
+    height: auto;
+}
+
+.btnContainer{
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background-color : red;
+    border-radius: 50%; 
+}
+.close__modal-btn{
+    cursor: pointer;
+    color: white;
+    
+}
+
+/*-----------------------Seccion 2---------------------------------*/
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.container2__card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container2__card-img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+
+}
+
+.container2__card-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*-----------------------FOOTER---------------------------------*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.containerFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.containerFooter__div {
+    padding: 5px;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerFooter__div p {
+    margin: 0;
+
+}
+
+.containerFooter__div:first-child h3 {
+    margin-right: auto;
+    /* Alinea el primer h3 a la izquierda */
+}
+
+.containerFooter__div:last-child h3 {
+    margin-left: auto;
+    /* Alinea el último h3 a la derecha */
+}
+
+/*-----------------------MEDIA QUERY---------------------------------*/
+
+@media (max-width: 1200px) {
+    .container2 {
+        grid-template-columns: repeat(4, 1fr);     
+    }
+}
+@media (max-width: 900px) {
+    .container2 {
+        grid-template-columns: repeat(3, 1fr);     
+    }
+}
+@media screen and (max-width: 768px) {
+    footer{
+        max-width: 100%;
+        overflow-x: hidden; 
+    }
+    .containerFooter__div{
+        max-width: 100%;
+        overflow-x: hidden; 
+        font-size: small;
+    }
+    .container2 {
+        max-width: 100%; 
+        overflow-x: hidden; 
+        display: grid;
+        grid-template-columns: auto; 
+    }
+    .containerModal{
+        max-width: 100%; 
+        overflow-x: hidden; 
+    
+    }
+    .containerModal__modal img{
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
